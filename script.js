@@ -5,10 +5,6 @@ const rl = readline.createInterface({
     output: process.stdout
 });
 
-var esp = 0;
-var temp = 0;
-var vm = esp/temp;
-
 function askForVm(){
     rl.question('Digite a distância a ser percorrida: ', (esp) => {
         const espacoPercorrido = esp;
@@ -18,7 +14,7 @@ function askForVm(){
         rl.question('Digite o tempo de viagem: ', (temp) => {
             const tempoDeViagem = temp;
     
-            console.log(`A velocidade média da viagem é ${vm = esp/temp} km/h`);
+            console.log(`A velocidade média da viagem é ${espacoPercorrido/tempoDeViagem} km/h`);
     
             rl.close();
         });
