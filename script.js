@@ -13,8 +13,6 @@ function askForVm(){
     rl.question('Digite a distância a ser percorrida em quilômetros: ', (esp) => {
         const espacoPercorrido = esp;
 
-        // console.log(`Seu nome é ${nomeArmazenado}`);
-
         rl.question('Digite o tempo de viagem em horas: ', (temp) => {
             const tempoDeViagem = temp;
 
@@ -27,4 +25,20 @@ function askForVm(){
     });
 }
 
-askForVm()
+function askForTemp(){
+    rl.question('Digite a velocidade média desejada em Km/h: ', (vm) => {
+        const velocidadeMedia = vm;
+
+        rl.question('Digite o tempo da viagem em horas: ', (temp) => {
+            const tempoDeViagem = temp;
+
+            espacoPercorrido = tempoDeViagem * vm
+    
+            console.log(`O espaço corrido da sua viagem é ${espacoPercorrido.toFixed(2)} Km`);
+    
+            rl.close();
+        });
+    });
+}
+
+askForTemp()
