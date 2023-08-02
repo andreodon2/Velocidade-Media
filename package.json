@@ -1,0 +1,15 @@
+{
+    "name": "calculador_velocidade_media",
+    "version": "1.0.0",
+    "description": "Esse projeto visa a minha prática em Node.JS e criação de arquivos executáveis para simples instalação no Windows",
+    "main": "script.js",
+    "bin": {
+      "nome-do-executavel": "calculador_velocidade_media" 
+    },
+    "author": "André Gabriel Odon de Freitas",
+    "license": "MIT",
+    "dependencies": {
+      
+    }
+  }
+  
