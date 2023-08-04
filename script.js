@@ -5,6 +5,7 @@ const rl = readline.createInterface({
     output: process.stdout
 });
 
+
 console.log('=====================================================================================================')
 
 console.log('=============================CALCULADORA DE VELOCIDADE MÉDIA=========================================')
@@ -12,16 +13,19 @@ console.log('=============================CALCULADORA DE VELOCIDADE MÉDIA======
 console.log('=====================================================================================================')
 
 // FUNÇÕES BASE
+
+console.log('=========================================================================================================')
+console.log('===================================CALCULADORA DE VELOCIDADE MÉDIA=======================================')
+console.log('=========================================================================================================')
+
 function askForVm(){
-    rl.question('Digite a distância a ser percorrida: ', (esp) => {
+    rl.question('Digite a distância a ser percorrida em quilômetros: ', (esp) => {
         const espacoPercorrido = esp;
 
-        // console.log(`Seu nome é ${nomeArmazenado}`);
-
-        rl.question('Digite o tempo de viagem: ', (temp) => {
+        rl.question('Digite o tempo de viagem em horas: ', (temp) => {
             const tempoDeViagem = temp;
 
-            vm = espacoPercorrido / tempoDeViagem
+            vm = espacoPercorrido / tempoDeViagem;
     
             console.log(`A velocidade média da viagem é ${vm.toFixed(2)} km/h`);
     
@@ -30,7 +34,7 @@ function askForVm(){
     });
 }
 
-function askForEsp(){
+function askForTemp(){
     rl.question('Digite a velocidade média desejada em Km/h: ', (vm) => {
         const velocidadeMedia = vm;
 
@@ -63,4 +67,5 @@ function askForTemp(){
     });
 }
 // FIM FUNÇÕES BASE
+
 askForTemp()
