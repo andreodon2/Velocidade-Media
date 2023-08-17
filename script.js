@@ -28,7 +28,7 @@ function askForVm(){
     });
 }
 
-function askForTemp(){
+function askForEsp(){
     rl.question('Digite a velocidade média desejada em Km/h: ', (vm) => {
         const velocidadeMedia = vm;
 
@@ -37,7 +37,7 @@ function askForTemp(){
 
             espacoPercorrido = tempoDeViagem * vm
     
-            console.log(`O espaço corrido da sua viagem é ${espacoPercorrido.toFixed(2)} Km`);
+            console.log(`O espaço percorrido da sua viagem é ${espacoPercorrido.toFixed(2)} Km`);
     
             rl.close();
         });
@@ -48,13 +48,12 @@ function askForTemp(){
     rl.question('Digite a velocidade média desejada em Km/h: ', (vm) => {
         const velocidadeMedia = vm;
 
-        rl.question('Digite a distância percorrida desejada em horas desejada: ', (esp) => {
+        rl.question('Digite a distância da sua viagem: ', (esp) => {
             const espacoPercorrido = esp;
 
-            tempoDeViagem = espacoPercorrido * vm
-            diasViagem = tempoDeViagem / 24
+            tempoDeViagem = espacoPercorrido / vm
     
-            console.log(`O tempo de viagem necessária para a sua viagem é ${tempoDeViagem.toFixed(2)} horas ou ${diasViagem.toFixed(2)} dias`);
+            console.log(`O tempo de sua viagem é ${tempoDeViagem.toFixed(2)} horas`);
     
             rl.close();
         });
@@ -62,4 +61,22 @@ function askForTemp(){
 }
 // FIM FUNÇÕES BASE
 
-askForTemp()
+// FIM FUNÇÕES BASE
+
+// INÍCIO DO SWITCH CASE
+
+rl.question('Escolha uma opção(1- Velocidade Média | 2- Espaço percorrido | 3- Tempo de viagem): ', (opcao) => {
+    switch(opcao) {
+        case '1':
+            askForVm();
+            break;
+        case '2':
+            askForEsp();
+            break;
+        case '3':
+            askForTemp();
+            break;
+        default:
+            console.log('Opção inválida.');
+    }
+})
